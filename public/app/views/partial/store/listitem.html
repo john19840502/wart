@@ -1,0 +1,12 @@
+<a class="list-group-item hand animate-item" ng-repeat="item in items" ng-click="ListItemClick(item)">
+  <div style="float:left;">
+    <img style="width: 64px; height: 64px;" class="img-thumbnail" ng-src="{{item.picture}}">
+  </div>
+  <h4>{{item.name}}
+    <span class="stars-container">
+      <span class="badge pull-right">{{item.cost}}</span>
+    </span>
+  </h4>
+  {{item.man_name}}
+  <span class="badge pull-right">{{item.vote}}</span>
+</a>

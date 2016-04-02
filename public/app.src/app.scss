@@ -1,0 +1,113 @@
+body {
+  padding-top: 56px;
+}
+
+.hand {
+  cursor: pointer;
+}
+#veil {
+  position: fixed;
+  //position: absolute;
+  top: 0;
+  left: 0;
+  height:100%;
+  width:100%;
+  cursor: not-allowed;
+  filter: alpha(opacity=60);
+  opacity: 0.6;
+  background: #adadad;
+}
+#feedLoading {
+  position: fixed;
+  //position: absolute;
+  top:48%;
+  width:100%;
+  text-align: center;
+  font-size: 4em;
+  color:white;
+  text-shadow: 2px 2px 2px #021124;
+}
+
+
+
+
+
+@mixin transition($values) {
+  -webkit-transition: $values;
+  -moz-transition: $values;
+  -ms-transition: $values;
+  -o-transition: $values;
+  transition: $values;
+}
+
+@mixin transform($values) {
+  -webkit-transform: $values;
+  -moz-transform: $values;
+  -ms-transform: $values;
+  -o-transform: $values;
+  transform: $values;
+}
+
+.container.view.ng-enter,
+.container.view.ng-leave {
+  @include transition(700ms linear all);
+}
+
+.container.view.ng-enter {
+  @include transform(scale(0.5));
+  opacity: 0.2;
+  position: relative;
+  left: 100%;
+}
+
+.container.view.ng-enter.ng-enter-active {
+  @include transform(scale(1));
+  opacity: 1;
+  left: 0;
+}
+
+.container.view.ng-leave {
+  @include transform(scale(1));
+  position: absolute;
+  z-index: -1;
+  opacity: 0.8;
+  left: 0;
+}
+
+.container.view.ng-leave.ng-leave-active {
+  @include transform(scale(0.5));
+  opacity: 0.1;
+  left: -100%;
+}
+
+
+
+@mixin simple_list_item($sel,$trans,$sc_out,$op_out)
+{
+  .#{$sel} {
+
+  };
+  .#{$sel}.ng-move,
+  .#{$sel}.ng-enter,
+  .#{$sel}.-leave {
+      @include transition($trans);
+  };
+
+  .#{$sel}.ng-leave.ng-leave-active,
+  .#{$sel}.ng-move,
+  .#{$sel}.ng-enter {
+    @include transform(scaley($sc_out));
+    opacity: $op_out;
+  }
+  .#{$sel}.ng-leave,
+  .#{$sel}.ng-move.ng-move-active,
+  .#{$sel}.ng-enter.ng-enter-active {
+    @include transform(scaley(1));
+    opacity: 1;
+  }
+};
+
+@include simple_list_item(animate-comment,500ms linear all,0.1,0);
+@include simple_list_item(animate-item,500ms linear all,0.1,0);
+@include simple_list_item(animate-video,500ms linear all,0.1,0);
+

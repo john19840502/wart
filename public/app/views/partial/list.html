@@ -1,0 +1,17 @@
+<div class="panel panel-default">
+    <div class="panel-heading">{{caption}}</div>
+    <ul class="list-group">
+        <ng-include src="ListItemTemplate()"></ng-include>
+        <li class="list-group-item" ng-hide="items.length">
+            <center>
+                Список пуст
+            </center>
+        </li>
+    </ul>
+    <div class="panel-footer" ng-show="isLoading()">
+        <center >Загрузка...</center>
+    </div>
+    <div class="panel-footer btn-default" ng-show="haveMore()" ng-click="load()">
+        <center >Еще...</center>
+    </div>
+</div>

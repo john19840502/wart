@@ -1,0 +1,34 @@
+<div class="container-fluid navbar-right">
+    <button type="button" class="btn btn-default navbar-btn dropdown-toggle" data-toggle="dropdown">
+        <span class="caret"></span>
+        <span class="glyphicon glyphicon-tasks"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu" id=main_menu ng-controller="MenuController">
+        <li><a class=hand ng-click="CategoryList()">Категории</a></li>
+        <li class="divider"></li>
+        <li><a class=hand ng-click="MyLoads()" ng-show="allow.ViewSelfLoads()">Мои игры (загруженные)</a></li>
+        <li><a class=hand ng-click="MyVotes()" ng-show="allow.ViewSelfVotes()">Мои оценки игр</a></li>
+        <li class="divider" ng-show="Divider1()"></li>
+        <li><a class=hand ng-click="MyApps()" ng-show="allow.ViewSelfApproved()">Мои игры (подтвержденные)</a></li>
+        <li><a class=hand ng-click="MyRequests()" ng-show="allow.ViewSelfRequests()">Мои игры (не подтвержденные)</a></li>
+        <li><a class=hand ng-click="AddItem()" ng-show="allow.PostItem()">Добавить игру</a></li>
+        <li class="divider" ng-show="Divider2()"></li>
+        <li><a class=hand ng-click="ManageRequests()"  ng-show="allow.ViewRequests()">Запросы на подтверждение</a></li>
+        <li class="divider" ng-show="Divider3()"></li>
+        <li><a class=hand ng-click="CreateVideo()" ng-show="allow.PostVideo()">Добавить видео</a></li>
+        <li><a class=hand ng-click="Videos()">Список видео</a></li>
+        <li><a class=hand ng-click="PrepVideo()" ng-show="allow.ViewPrepVideos()">Видео на обработке</a></li>
+        <li><a class=hand ng-click="MyVideo()" ng-show="allow.ViewSelfVideos()">Моё видео</a></li>
+        <li class="divider" ></li>
+        <li><a class=hand ng-click="setrole(0)" >guest</a></li>
+        <li><a class=hand ng-click="setrole(1)" >user</a></li>
+        <li><a class=hand ng-click="setrole(2)" >admin</a></li>
+    </ul>
+</div>
+
+
+
+
+
+
+

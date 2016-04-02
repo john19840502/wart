@@ -1,0 +1,24 @@
+<div class="panel panel-default">
+    <div class="panel-heading">{{video.name}}</div>
+    <div class="panel-body">
+        <div class=row>
+            <div class="col-xs-12">
+                <center>
+                    <video class="video-js vjs-default-skin" controls preload="none"
+                           width="640"
+                           height="390"
+                           poster="{{video.dpicture}}"
+                           data-setup="{}">
+                        <source src="{{video.media_mp4}}"  type='video/mp4' />
+                        <source src="{{video.media_webm}}" type='video/webm' />
+                        <source src="{{video.media_ogv}}"  type='video/ogg' />
+                        <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+                    </video>
+                </center>
+            </div>
+            <h4>Описание</h4>
+            {{video.descr}}
+        </div>
+    </div>
+</div>
+    <ng-include src="'app/views/partial/comments.html'"></ng-include>

@@ -1,0 +1,59 @@
+<div class="panel panel-default">
+   <div class="panel-heading">
+        Добавить игру
+    </div>
+    <div class="panel-body">
+        <div class=row>
+            <div class="col-xs-6">
+<form role="form" name="AddItemForm" ng-submit="submit()">
+  <div class="form-group" ng-class="{ 'has-error' : AddItemForm.name.$invalid && !AddItemForm.name.$pristine }">
+    <label for="name">Название</label>
+      <input type="text" class="form-control" id="name" name="name"
+           placeholder="Введите название"
+           required
+           ng-minlength="5"
+           ng-model="item.name"
+      >
+  </div>
+  <div class="form-group" ng-class="{'has-error':AddItemForm.category.$invalid && !AddItemForm.category.$pristine}">
+    <label for="name">Категория</label>
+    <select  class="form-control" id="category" name="category" placeholder="Выберите категорию"
+             required
+             ng-model="item.category"
+             ng-options="category.id as category.name for category in categories"
+    ></select>
+  </div>
+  <div class="form-group" ng-class="{'has-error':AddItemForm.cost.$invalid && !AddItemForm.cost.$pristine}">
+    <label for="cost">Стоимость</label>
+    <input type="text" class="form-control" id="cost" name="cost" placeholder="Введите стоимость"
+           ng-model="item.cost"
+           required
+           ng-minlength="1"
+           >
+  </div>
+  <div class="form-group" >
+    <label for="picture">Изображение</label>
+    <input type=file class="form-control" id="picture" name="picture"
+           placeholder="Выберите изображение"
+           accept="image/*"
+           required="required"
+           title="Необходимо выбрать изображение"
+           ng-file-select="pictureChanged($event)" >
+  </div>
+  <div class="form-group" ng-class="{'has-error':AddItemForm.desc.$invalid && !AddItemForm.desc.$pristine}">
+    <label for="desc">Описание</label>
+    <textarea class="form-control" rows="3" name="desc" id="desc" placeholder="Введите описание"
+              required
+              ng-model="item.desc"
+              ng-minlength="10"
+    ></textarea>
+  </div>
+  <button type="submit" class="btn btn-default" ng-disabled="AddItemForm.$invalid">Добавить</button>
+</form>
+            </div>
+            <div class="col-xs-6">
+                <img data-ng-src="{{item.picture512}}"  style="width:100%" class="img-thumbnail" alt="Выберите изображение (желательно 512x512)" >
+            </div>
+        </div>
+    </div>
+</div>

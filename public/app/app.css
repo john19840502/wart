@@ -1,0 +1,161 @@
+body {
+  padding-top: 56px; }
+
+.hand {
+  cursor: pointer; }
+
+#veil {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  cursor: not-allowed;
+  filter: alpha(opacity=60);
+  opacity: 0.6;
+  background: #adadad; }
+
+#feedLoading {
+  position: fixed;
+  top: 48%;
+  width: 100%;
+  text-align: center;
+  font-size: 4em;
+  color: white;
+  text-shadow: 2px 2px 2px #021124; }
+
+.container.view.ng-enter,
+.container.view.ng-leave {
+  -webkit-transition: 700ms linear all;
+  -moz-transition: 700ms linear all;
+  -ms-transition: 700ms linear all;
+  -o-transition: 700ms linear all;
+  transition: 700ms linear all; }
+
+.container.view.ng-enter {
+  -webkit-transform: scale(0.5);
+  -moz-transform: scale(0.5);
+  -ms-transform: scale(0.5);
+  -o-transform: scale(0.5);
+  transform: scale(0.5);
+  opacity: 0.2;
+  position: relative;
+  left: 100%; }
+
+.container.view.ng-enter.ng-enter-active {
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+  left: 0; }
+
+.container.view.ng-leave {
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+  position: absolute;
+  z-index: -1;
+  opacity: 0.8;
+  left: 0; }
+
+.container.view.ng-leave.ng-leave-active {
+  -webkit-transform: scale(0.5);
+  -moz-transform: scale(0.5);
+  -ms-transform: scale(0.5);
+  -o-transform: scale(0.5);
+  transform: scale(0.5);
+  opacity: 0.1;
+  left: -100%; }
+
+.animate-comment.ng-move,
+.animate-comment.ng-enter,
+.animate-comment.-leave {
+  -webkit-transition: 500ms linear all;
+  -moz-transition: 500ms linear all;
+  -ms-transition: 500ms linear all;
+  -o-transition: 500ms linear all;
+  transition: 500ms linear all; }
+
+.animate-comment.ng-leave.ng-leave-active,
+.animate-comment.ng-move,
+.animate-comment.ng-enter {
+  -webkit-transform: scaley(0.1);
+  -moz-transform: scaley(0.1);
+  -ms-transform: scaley(0.1);
+  -o-transform: scaley(0.1);
+  transform: scaley(0.1);
+  opacity: 0; }
+
+.animate-comment.ng-leave,
+.animate-comment.ng-move.ng-move-active,
+.animate-comment.ng-enter.ng-enter-active {
+  -webkit-transform: scaley(1);
+  -moz-transform: scaley(1);
+  -ms-transform: scaley(1);
+  -o-transform: scaley(1);
+  transform: scaley(1);
+  opacity: 1; }
+
+.animate-item.ng-move,
+.animate-item.ng-enter,
+.animate-item.-leave {
+  -webkit-transition: 500ms linear all;
+  -moz-transition: 500ms linear all;
+  -ms-transition: 500ms linear all;
+  -o-transition: 500ms linear all;
+  transition: 500ms linear all; }
+
+.animate-item.ng-leave.ng-leave-active,
+.animate-item.ng-move,
+.animate-item.ng-enter {
+  -webkit-transform: scaley(0.1);
+  -moz-transform: scaley(0.1);
+  -ms-transform: scaley(0.1);
+  -o-transform: scaley(0.1);
+  transform: scaley(0.1);
+  opacity: 0; }
+
+.animate-item.ng-leave,
+.animate-item.ng-move.ng-move-active,
+.animate-item.ng-enter.ng-enter-active {
+  -webkit-transform: scaley(1);
+  -moz-transform: scaley(1);
+  -ms-transform: scaley(1);
+  -o-transform: scaley(1);
+  transform: scaley(1);
+  opacity: 1; }
+
+.animate-video.ng-move,
+.animate-video.ng-enter,
+.animate-video.-leave {
+  -webkit-transition: 500ms linear all;
+  -moz-transition: 500ms linear all;
+  -ms-transition: 500ms linear all;
+  -o-transition: 500ms linear all;
+  transition: 500ms linear all; }
+
+.animate-video.ng-leave.ng-leave-active,
+.animate-video.ng-move,
+.animate-video.ng-enter {
+  -webkit-transform: scaley(0.1);
+  -moz-transform: scaley(0.1);
+  -ms-transform: scaley(0.1);
+  -o-transform: scaley(0.1);
+  transform: scaley(0.1);
+  opacity: 0; }
+
+.animate-video.ng-leave,
+.animate-video.ng-move.ng-move-active,
+.animate-video.ng-enter.ng-enter-active {
+  -webkit-transform: scaley(1);
+  -moz-transform: scaley(1);
+  -ms-transform: scaley(1);
+  -o-transform: scaley(1);
+  transform: scaley(1);
+  opacity: 1; }
+
+/*# sourceMappingURL=app.css.map */

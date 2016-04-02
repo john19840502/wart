@@ -1,0 +1,95 @@
+<div class="panel panel-default">
+    <div class="panel-heading">{{name}}</div>
+    <div class="panel-body">
+
+        <ul class="nav nav-tabs nav-justified" role="tablist">
+            <li id=btoppaid ng-class="tabClass(0)" ng-click="tabClick(0)"><a ng-class="handtabClass(0)">Топ платных</a></li>
+            <li id=btopfree ng-class="tabClass(1)" ng-click="tabClick(1)"><a ng-class="handtabClass(1)">Топ беcплатных</a></li>
+            <li id=btopload ng-class="tabClass(2)" ng-click="tabClick(2)"><a ng-class="handtabClass(2)">Топ загрузок</a></li>
+        </ul>
+
+        <div class="panel panel-default" ng-show="isVisibleTab(0)">
+            <ul class="list-group">
+                <a class="list-group-item hand animate-item" ng-repeat="item in items[0]" ng-click="ItemClick(item)">
+                    <div style="float:left;">
+                        <img style="width: 64px; height: 64px;" class="img-thumbnail" ng-src="{{item.picture}}">
+                    </div>
+                    <h4>{{item.name}}
+                        <span class="stars-container">
+                          <span class="badge pull-right">{{item.cost}}</span>
+                        </span>
+                    </h4>
+                    {{item.man_name}}
+                    <span class="badge pull-right">{{item.vote}}</span>
+                </a>
+                <li class="list-group-item" ng-hide="items[0].length">
+                    <center>
+                        Список пуст
+                    </center>
+                </li>
+            </ul>
+            <div class="panel-footer" ng-show="isLoading(0)">
+                <center >Загрузка...</center>
+            </div>
+            <div class="panel-footer btn-default" ng-show="haveMore(0)" ng-click="load(0)">
+                <center >Еще...</center>
+            </div>
+        </div>
+        <div class="panel panel-default" ng-show="isVisibleTab(1)">
+            <ul class="list-group">
+                <a class="list-group-item hand animate-item" ng-repeat="item in items[1]" ng-click="ItemClick(item)">
+                    <div style="float:left;">
+                        <img style="width: 64px; height: 64px;" class="img-thumbnail" ng-src="{{item.picture}}">
+                    </div>
+                    <h4>{{item.name}}
+                        <span class="stars-container">
+                          <span class="badge pull-right">{{item.cost}}</span>
+                        </span>
+                    </h4>
+                    {{item.man_name}}
+                    <span class="badge pull-right">{{item.vote}}</span>
+                </a>
+                <li class="list-group-item" ng-hide="items[1].length">
+                    <center>
+                        Список пуст
+                    </center>
+                </li>
+            </ul>
+            <div class="panel-footer" ng-show="isLoading(1)">
+                <center >Загрузка...</center>
+            </div>
+            <div class="panel-footer btn-default" ng-show="haveMore(1)" ng-click="load(1)">
+                <center >Еще...</center>
+            </div>
+        </div>
+        <div class="panel panel-default" ng-show="isVisibleTab(2)">
+            <ul class="list-group">
+
+                <a class="list-group-item hand animate-item" ng-repeat="item in items[2]" ng-click="ItemClick(item)">
+                    <div style="float:left;">
+                        <img style="width: 64px; height: 64px;" class="img-thumbnail" ng-src="{{item.picture}}">
+                    </div>
+                    <h4>{{item.name}}
+                        <span class="stars-container">
+                         <span class="badge pull-right">{{item.cost}}</span>
+                        </span>
+                    </h4>
+                    {{item.man_name}}
+                    <span class="badge pull-right">{{item.vote}}</span>
+                </a>
+                <li class="list-group-item" ng-hide="items[2].length">
+                    <center>
+                        Список пуст
+                    </center>
+                </li>
+            </ul>
+            <div class="panel-footer" ng-show="isLoading(2)">
+                <center >Загрузка...</center>
+            </div>
+            <div class="panel-footer btn-default" ng-show="haveMore(2)" ng-click="load(2)">
+                <center >Еще...</center>
+            </div>
+        </div>
+    </div>
+</div>
+

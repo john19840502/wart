@@ -1,0 +1,45 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    Добавить видео
+  </div>
+  <div class="panel-body">
+<form role="form" name="AddVideoForm" ng-submit="submit()" ng-hide="loading">
+  <div class="form-group" ng-class="{ 'has-error' : AddVideoForm.name.$invalid && !AddVideoForm.name.$pristine }">
+    <label for="name">Название</label>
+    <input type="text" class="form-control" id="name" name="name" placeholder="Введите название"
+           ng-model="video.name"
+           required
+           ng-minlength="5"
+    >
+  </div>
+  <div class="form-group" ng-class="{ 'has-error' : AddVideoForm.video.$invalid && !AddVideoForm.video.$pristine }">
+    <label for="name">Видео</label>
+    <input type=file class="form-control" id="video" name="video" placeholder="Выберите видео"
+           accept="video/*"
+           required="required"
+           title="Необходимо выбрать видео"
+           ng-file-select="fileChanged($event)"
+    />
+  </div>
+  <div class="form-group" ng-class="{ 'has-error' : AddVideoForm.desc.$invalid && !AddVideoForm.desc.$pristine }">
+    <label for="desc">Описание</label>
+    <textarea class="form-control" rows="3" name="desc" id="desc" placeholder="Введите описание"
+              ng-model="video.desc"
+              required
+              ng-minlength="10"
+    ></textarea>
+  </div>
+  <button type="submit" class="btn btn-default" ng-disabled="AddVideoForm.$invalid">Добавить</button>
+</form>
+    <div ng-show="loading">
+      Процесс загрузки
+      <div class="progress" >
+        <div class="progress-bar progress-bar-striped active" role="progressbar"
+          aria-valuenow="" aria-valuemin="0" aria-valuemax="100"  ng-style="loadstyle">
+          {{progress}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

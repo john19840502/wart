@@ -1,0 +1,41 @@
+
+<div class="panel panel-default" ng-show="allowPost()">
+    <div class="hand panel-heading" ng-click="VisibleAddComment=!VisibleAddComment">
+        <span class="glyphicon" ng-class="{'glyphicon-collapse-up': VisibleAddComment,'glyphicon-collapse-down': !VisibleAddComment}"></span>
+        Добавить комментарий
+    </div>
+    <div class="panel-body" ng-show="!!VisibleAddComment">
+        <form role="form" >
+            <div class="form-group">
+                <label for="text">Текст</label>
+                <textarea class="form-control" rows="3" ng-model="comments.newtext" placeholder="Введите текст"></textarea>
+            </div>
+            <button ng-click="addComment()" class="btn btn-default">Добавить</button>
+        </form>
+    </div>
+</div>
+<div class="panel panel-default" ng-show="allowView()">
+    <div class="panel-heading">Комментарии</div>
+    <ul class="list-group">
+        <li class="list-group-item animate-comment"  ng-repeat="comment in comments.data">
+            <h5 class="list-group-item-heading">[{{comment.cdt}}] {{comment.user.name}}</h5>
+            <p class="list-group-item-text">{{comment.text}}</p>
+        </li>
+        <li class="list-group-item" ng-hide="comments.data.length">
+            <center>
+                Список пуст
+            </center>
+        </li>
+    </ul>
+    <div class="panel-footer" ng-show="comments.loading">
+        <center >Загрузка...</center>
+    </div>
+    <div class="hand panel-footer btn-default" ng-show="comments.havemore" ng-click="loadComments()">
+        <center >Еще...</center>
+    </div>
+</div>
+<div class="panel panel-default" ng-hide="allowView()">
+    <div class="panel-heading">
+        <center>Комментарии закрыты</center>
+    </div>
+</div>

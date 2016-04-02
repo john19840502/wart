@@ -1,0 +1,45 @@
+<div class="panel panel-default">
+    <div class="panel-heading">{{item.name}}</div>
+    <div class="panel-body">
+        <div class=row>
+            <div class="col-xs-6">
+                <img style="width: 512px;" class="img-thumbnail" ng-src="{{item.picture}}">
+            </div>
+            <div class="col-xs-6">
+                <div>
+                    <div class="progress"><div class="progress-bar" role="progressbar" aria-valuenow="{{item.vote5}}" aria-valuemin="0" aria-valuemax="{{item.votemax}}" style="width: {{item.percent5}}%;">{{item.vote5}}[5]</div></div>
+                    <div class="progress"><div class="progress-bar" role="progressbar" aria-valuenow="{{item.vote4}}" aria-valuemin="0" aria-valuemax="{{item.votemax}}" style="width: {{item.percent4}}%;">{{item.vote4}}[4]</div></div>
+                    <div class="progress"><div class="progress-bar" role="progressbar" aria-valuenow="{{item.vote3}}" aria-valuemin="0" aria-valuemax="{{item.votemax}}" style="width: {{item.percent3}}%;">{{item.vote3}}[3]</div></div>
+                    <div class="progress"><div class="progress-bar" role="progressbar" aria-valuenow="{{item.vote2}}" aria-valuemin="0" aria-valuemax="{{item.votemax}}" style="width: {{item.percent2}}%;">{{item.vote2}}[2]</div></div>
+                    <div class="progress"><div class="progress-bar" role="progressbar" aria-valuenow="{{item.vote1}}" aria-valuemin="0" aria-valuemax="{{item.votemax}}" style="width: {{item.percent1}}%;">{{item.vote1}}[1]</div></div>
+                    Средняя оценка: <span> {{item.vote}}</span><br>
+                    <span ng-show="IwasVoted()">Вы оценили: {{item.myvote}}</span>
+                    <br>
+                    <div ng-show="canIVote()">
+                        Оценить:
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default" ng-Click="Vote(1)">1</button>
+                            <button type="button" class="btn btn-default" ng-Click="Vote(2)">2</button>
+                            <button type="button" class="btn btn-default" ng-Click="Vote(3)">3</button>
+                            <button type="button" class="btn btn-default" ng-Click="Vote(4)">4</button>
+                            <button type="button" class="btn btn-default" ng-Click="Vote(5)">5</button>
+                        </div>
+                    </div>
+                    <div ng-show="item.loaded" class="alert alert-success" role="alert">Вы загрузили</div>
+                    <button type="button" ng-show="canILoad()" ng-Click="Load()" class="btn btn-success">Загрузить</button>
+                </div>
+                <div>
+                    Загрузок: {{item.loads}}<br>
+                    Категория: {{item.cat_name}}<br><br>
+                    <button type="button" ng-show="canIApprove()" ng-Click="Approve()" class="btn btn-success">Подтвердить</button>
+                </div>
+            </div>
+        </div>
+        <h4>Описание</h4>
+        {{item.descr}}
+        <br>
+        <br>
+        <br>
+        <ng-include src="'app/views/partial/comments.html'"></ng-include>
+    </div>
+</div>
